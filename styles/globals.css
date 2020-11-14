@@ -14,3 +14,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}

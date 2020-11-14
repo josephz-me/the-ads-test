@@ -3,5 +3,10 @@ import React from "react";
 import styles from "./Navbar.module.scss";
 
 export default function Footer() {
-  return <nav>Navbar</nav>;
+  return (
+    <nav className={styles.navContainer}>
+      <div className={styles.left}>The Ads Test</div>
+      <div className={styles.right}>About this Project</div>
+    </nav>
+  );
 }
