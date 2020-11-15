@@ -1,5 +1,5 @@
 import styles from "./index.module.scss";
-import YesNo from "../components/YesNo";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -7,9 +7,9 @@ export default function Home() {
       <div className={styles.left}>
         <h1>The Ads Test</h1>
         <p>How well do your apps know you?</p>
-        <button>Take the test</button>
-
-        {/* <YesNo></YesNo> */}
+        <Link href="/age">
+          <button>Take the test</button>
+        </Link>
       </div>
       <div className={styles.right}>
         <img src="/landing-image.png"></img>

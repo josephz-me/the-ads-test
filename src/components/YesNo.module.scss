@@ -1,14 +1,24 @@
 @import "../../styles/vars_module.scss";
 
+.textInput {
+  border: 1px solid $primary-color;
+  border-radius: $border-radius;
+  padding: 10px;
+  width: 300px;
+  font-size: 16px;
+}
+
 .YesNoContainer {
   width: auto;
+
   input {
     padding: $button-padding;
-
+    margin: 0;
     background: white;
     color: $primary-color;
     cursor: pointer;
     border: 1px solid $primary-color;
+    font-size: 16px;
   }
 
   input:hover {
@@ -17,12 +27,12 @@
   }
 
   input:first-child {
-    border-radius: 10px 0 0 10px;
+    border-radius: 8px 0 0 8px;
     border-right: none;
   }
 
   input:last-child {
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 0px 8px 8px 0px;
   }
 
   .active {

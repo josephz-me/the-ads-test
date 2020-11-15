@@ -10,13 +10,6 @@
   vertical-align: middle;
   height: 100vh;
 
-  button {
-    border-radius: 10px;
-    padding: $button-padding;
-    border: none;
-    background: $primary-color;
-    color: white;
-  }
   .left {
     grid-template: 1;
   }
@@ -24,4 +17,14 @@
   .right {
     grid-template: 2;
   }
+}
+
+.centerAlign {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  height: 100vh;
+  justify-items: center;
+  align-items: center;
+  vertical-align: middle;
 }
