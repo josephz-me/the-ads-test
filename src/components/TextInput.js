@@ -1,11 +1,13 @@
 import styles from "./TextInput.module.scss";
 import React, { useState } from "react";
 
-export default function TextInputPage(props) {
-  return (
+function TextInputPage(props) {
+    return (
     <div className={styles.textInputContainer}>
       <h2 className={styles.title}>{props.question}</h2>
-      <input className={styles.textInput} type="text" placeholder="" />
+      <input className={styles.textInput} type="text" value={props.input} onInput={props.onInput}/>
     </div>
-  );
+    );
 }
+
+export default TextInputPage

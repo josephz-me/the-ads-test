@@ -6,9 +6,9 @@ export default function Home() {
     <div className={styles.landingContainer}>
       <div className={styles.left}>
         <h1>The Ads Test</h1>
-        <p>How well do your apps know you?</p>
-        <Link href="/age">
-          <button>Take the test</button>
+        <p>How well do you know the websites that know you so well?</p>
+        <Link href='name'>
+          <button>Take the Test</button>
         </Link>
       </div>
       <div className={styles.right}>
