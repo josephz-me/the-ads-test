@@ -1,5 +1,6 @@
 import styles from "./index.module.scss";
 import Link from "next/link";
+import ProgressBar from "react-bootstrap/ProgressBar";
 
 export default function Home() {
   return (
@@ -7,7 +8,7 @@ export default function Home() {
       <div className={styles.left}>
         <h1>The Ads Test</h1>
         <p>How well do you know the websites that know you so well?</p>
-        <Link href='name'>
+        <Link href="one">
           <button>Take the Test</button>
         </Link>
       </div>

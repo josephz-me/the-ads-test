@@ -7,7 +7,7 @@ export default function TextInputPage(props) {
 
   return (
     <div className={styles.textInputContainer}>
-      <h2 className={styles.title}>{props.title}</h2>
+      <h2 className={styles.title}>{props.question}</h2>
       {/* <YesNo></YesNo> */}
       <div className={styles.YesNoContainer}>
         <input

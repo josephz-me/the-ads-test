@@ -1,6 +1,11 @@
 import React from "react";
-// import styles from "./Footer.module.scss";
+import ProgressBar from "react-bootstrap/ProgressBar";
+import styles from "./Footer.module.scss";
 
 export default function Footer() {
-  return <footer>Footer</footer>;
+  return (
+    <footer>
+      <ProgressBar now={60} />
+    </footer>
+  );
 }
