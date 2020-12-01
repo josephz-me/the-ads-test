@@ -8,17 +8,17 @@ import LeftArrow from "../components/LeftArrow";
 
 function storeInputInContext(input) {
   const context = useContext(Context);
-  context.nine = input;
+  context.eight = input;
 }
 
-export default function Nine() {
+export default function Eight() {
   const [option, setOption] = useState(-1);
 
   return (
     <div className={styles.centerAlign}>
       <div>
         <LikertScale
-          question="When you viewed your Google Ad Settings, you felt surprised by the results."
+          question="I believe Google ad personalization should be, by default, turned on."
           responses={[
             { value: 1, text: "Strongly Disagree" },
             { value: 2, text: "Disagree" },
@@ -29,12 +29,12 @@ export default function Nine() {
           value={option}
           onClick={response => setOption(response)}
         />
-        <Link href="ten" onClick={storeInputInContext(option)}>
+        <Link href="nine" onClick={storeInputInContext(option)}>
           <a>
             <RightArrow></RightArrow>
           </a>
         </Link>
-        <Link href="eight" onClick={storeInputInContext(option)}>
+        <Link href="seven" onClick={storeInputInContext(option)}>
           <a>
             <LeftArrow></LeftArrow>
           </a>

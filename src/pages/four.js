@@ -4,11 +4,11 @@ import Link from "next/link";
 import { Context } from "./store";
 import { useContext, useState } from "react";
 import RightArrow from "../components/RightArrow";
+import LeftArrow from "../components/LeftArrow";
 
 function storeInputInContext(input) {
   const context = useContext(Context);
   context.four = input;
-  console.log(context)
 }
 
 export default function Four() {
@@ -18,7 +18,7 @@ export default function Four() {
     <div className={styles.centerAlign}>
       <div>
         <LikertScale
-          question="I am careful with how I share my information online."
+          question="I feel Google is collecting too much information about people online."
           responses={[
             { value: 1, text: "Strongly Disagree" },
             { value: 2, text: "Disagree" },
@@ -27,11 +27,16 @@ export default function Four() {
             { value: 5, text: "Strongly Agree" }
           ]}
           value={option}
-          onClick={(response) => setOption(response)}
+          onClick={response => setOption(response)}
         />
-        <Link href="thanks" onClick={storeInputInContext(option)}>
+        <Link href="five" onClick={storeInputInContext(option)}>
           <a>
             <RightArrow></RightArrow>
+          </a>
+        </Link>
+        <Link href="three" onClick={storeInputInContext(option)}>
+          <a>
+            <LeftArrow></LeftArrow>
           </a>
         </Link>
       </div>

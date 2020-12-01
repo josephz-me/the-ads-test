@@ -8,17 +8,18 @@ import LeftArrow from "../components/LeftArrow";
 
 function storeInputInContext(input) {
   const context = useContext(Context);
-  context.nine = input;
+  context.four = input;
+  console.log(context);
 }
 
-export default function Nine() {
+export default function Four() {
   const [option, setOption] = useState(-1);
 
   return (
     <div className={styles.centerAlign}>
       <div>
         <LikertScale
-          question="When you viewed your Google Ad Settings, you felt surprised by the results."
+          question="I am careful with how I share my information online."
           responses={[
             { value: 1, text: "Strongly Disagree" },
             { value: 2, text: "Disagree" },
@@ -29,12 +30,12 @@ export default function Nine() {
           value={option}
           onClick={response => setOption(response)}
         />
-        <Link href="ten" onClick={storeInputInContext(option)}>
+        <Link href="thanks" onClick={storeInputInContext(option)}>
           <a>
             <RightArrow></RightArrow>
           </a>
         </Link>
-        <Link href="eight" onClick={storeInputInContext(option)}>
+        <Link href="two" onClick={storeInputInContext(input)}>
           <a>
             <LeftArrow></LeftArrow>
           </a>

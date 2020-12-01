@@ -1,5 +1,5 @@
 import styles from "./index.module.scss";
-import LikertScale from "../components/LikertScale";
+import YesNo from "../components/YesNo";
 import Link from "next/link";
 import { Context } from "./store";
 import { useContext, useState } from "react";
@@ -12,29 +12,21 @@ function storeInputInContext(input) {
 }
 
 export default function Three() {
-  const [option, setOption] = useState(-1);
-
+  const [yesno, setYesNo] = useState(0);
   return (
     <div className={styles.centerAlign}>
       <div>
-        <LikertScale
-          question="I trust Google to keep my personal data safe."
-          responses={[
-            { value: 1, text: "Strongly Disagree" },
-            { value: 2, text: "Disagree" },
-            { value: 3, text: "Neutral" },
-            { value: 4, text: "Agree" },
-            { value: 5, text: "Strongly Agree" }
-          ]}
-          value={option}
-          onClick={response => setOption(response)}
+        <YesNo
+          question="I am careful with how I share my information online"
+          value={yesno}
+          onClick={response => setYesNo(response)}
         />
-        <Link href="four" onClick={storeInputInContext(option)}>
+        <Link href="four" onClick={storeInputInContext(yesno)}>
           <a>
             <RightArrow></RightArrow>
           </a>
         </Link>
-        <Link href="two" onClick={storeInputInContext(option)}>
+        <Link href="two" onClick={storeInputInContext(input)}>
           <a>
             <LeftArrow></LeftArrow>
           </a>
