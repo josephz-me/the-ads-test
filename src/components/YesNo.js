@@ -15,9 +15,8 @@ export default function TextInputPage(props) {
           className={(styles.button, activeYes ? styles.active : "")}
           value="Yes"
           onClick={() => {
+            props.onClick(1);
             setActiveYes(!activeYes);
-            console.log(!activeYes);
-
             if (activeNo) {
               setActiveNo(!activeNo);
             }
@@ -28,8 +27,8 @@ export default function TextInputPage(props) {
           className={(styles.button, activeNo ? styles.active : "")}
           value="No"
           onClick={() => {
+            props.onClick(-1);
             setActiveNo(!activeNo);
-
             if (activeYes) {
               setActiveYes(!activeYes);
             }

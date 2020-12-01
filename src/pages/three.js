@@ -7,20 +7,21 @@ import RightArrow from "../components/RightArrow";
 
 function storeInputInContext(input) {
   const context = useContext(Context);
-  context.city = input;
+  context.three = input;
+  console.log(context)
 }
 
-export default function Two() {
-  const [input, setInput] = useState("");
+export default function Three() {
+  const [yesno, setYesNo] = useState(0);
   return (
     <div className={styles.centerAlign}>
       <div>
         <YesNo
           question="I am careful with how I share my information online"
-          value={input}
-          onInput={e => setInput(e.target.value)}
+          value={yesno}
+          onClick={(response) => setYesNo(response)}
         />
-        <Link href="four" onClick={storeInputInContext(input)}>
+        <Link href="four" onClick={storeInputInContext(yesno)}>
           <a>
             <RightArrow></RightArrow>
           </a>

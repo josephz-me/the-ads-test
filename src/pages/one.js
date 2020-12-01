@@ -7,7 +7,7 @@ import RightArrow from "../components/RightArrow";
 
 function storeInputInContext(input) {
   const context = useContext(Context);
-  context.name = input;
+  context.one = input;
 }
 
 export default function One() {

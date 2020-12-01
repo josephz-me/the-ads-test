@@ -7,10 +7,10 @@ import RightArrow from "../components/RightArrow";
 
 function storeInputInContext(input) {
   const context = useContext(Context);
-  context.city = input;
+  context.four = input;
 }
 
-export default function Two() {
+export default function Four() {
   const [input, setInput] = useState("");
   return (
     <div className={styles.centerAlign}>

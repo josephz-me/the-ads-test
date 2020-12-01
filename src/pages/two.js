@@ -7,7 +7,7 @@ import RightArrow from "../components/RightArrow";
 
 function storeInputInContext(input) {
   const context = useContext(Context);
-  context.city = input;
+  context.two = input;
 }
 
 export default function Two() {
