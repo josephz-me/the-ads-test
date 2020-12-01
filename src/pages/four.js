@@ -8,10 +8,12 @@ import RightArrow from "../components/RightArrow";
 function storeInputInContext(input) {
   const context = useContext(Context);
   context.four = input;
+  console.log(context)
 }
 
 export default function Four() {
-  const [input, setInput] = useState("");
+  const [option, setOption] = useState(-1);
+
   return (
     <div className={styles.centerAlign}>
       <div>
@@ -24,10 +26,10 @@ export default function Four() {
             { value: 4, text: "Agree" },
             { value: 5, text: "Strongly Agree" }
           ]}
-          value={input}
-          onInput={e => setInput(e.target.value)}
+          value={option}
+          onClick={(response) => setOption(response)}
         />
-        <Link href="four" onClick={storeInputInContext(input)}>
+        <Link href="thanks" onClick={storeInputInContext(option)}>
           <a>
             <RightArrow></RightArrow>
           </a>

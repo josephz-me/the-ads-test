@@ -8,7 +8,6 @@ import RightArrow from "../components/RightArrow";
 function storeInputInContext(input) {
   const context = useContext(Context);
   context.three = input;
-  console.log(context)
 }
 
 export default function Three() {

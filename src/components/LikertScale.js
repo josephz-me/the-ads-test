@@ -1,3 +1,5 @@
+// Sourced from https://github.com/Craig-Creeger/react-likert-scale/blob/master/src/likert.js
+
 import React from 'react';
 import SHA1 from 'crypto-js/sha1';
 
@@ -6,17 +8,6 @@ import styles from './LikertScale.module.scss';
 class LikertScale extends React.Component {
 	constructor (props) {
 		super(props);
-		this.state = {
-			isKeyboardUser: false
-		};
-	}
-
-	componentDidMount () {
-		document.addEventListener('keydown', this.listenForTab);
-	}
-
-	componentWillUnmount () {
-		document.removeEventListener('keydown', this.listenForTab);
 	}
 
 	render () {
@@ -34,7 +25,10 @@ class LikertScale extends React.Component {
 						name={sha}
 						id={uniqueKey}
 						className={styles.visuallyHidden}
-						onClick={this.chosen}
+						onClick={() => {
+							console.log(idx);
+							this.props.onClick(idx);
+						}}
 					/>
 					<span className={styles.likertIndicator} />
 					<span className={styles.likertText}>{response.text}</span>
@@ -45,24 +39,12 @@ class LikertScale extends React.Component {
 		return (
 			<>
 				<h2 className={styles.title}>{question}</h2>
-				<fieldset className={`${styles.likertScale} ${this.state.isKeyboardUser ? styles.isKeyboardUser : ''}`}>
+				<fieldset className={styles.likertScale}>
 					<div className={styles.likertBand}>{radios}</div>
 				</fieldset>
 			</>
 		);
 	}
-
-	chosen = evt => {
-		if (typeof this.props.picked === 'function') {
-			this.props.picked(evt.target.value);
-		}
-	};
-
-	listenForTab = evt => {
-		if (evt.key === 'Tab') {
-			this.setState({ isKeyboardUser: true });
-		}
-	};
 }
 
 export default LikertScale;
