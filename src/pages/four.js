@@ -1,5 +1,5 @@
 import styles from "./index.module.scss";
-import LikertScale from "../components/TextInput";
+import LikertScale from "../components/LikertScale";
 import Link from "next/link";
 import { Context } from "./store";
 import { useContext, useState } from "react";

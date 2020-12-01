@@ -20,7 +20,7 @@ export default function Two() {
           value={input}
           onInput={e => setInput(e.target.value)}
         />
-        <Link href="LikertScale" onClick={storeInputInContext(input)}>
+        <Link href="four" onClick={storeInputInContext(input)}>
           <a>
             <RightArrow></RightArrow>
           </a>
