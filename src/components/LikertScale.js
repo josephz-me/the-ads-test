@@ -45,7 +45,7 @@ class LikertScale extends React.Component {
 		return (
 			<>
 				<h2 className={styles.title}>{question}</h2>
-				<fieldset classNames={[styles.likertScale, this.state.isKeyboardUser && styles.isKeyboardUser]}>
+				<fieldset className={`${styles.likertScale} ${this.state.isKeyboardUser ? styles.isKeyboardUser : ''}`}>
 					<div className={styles.likertBand}>{radios}</div>
 				</fieldset>
 			</>
