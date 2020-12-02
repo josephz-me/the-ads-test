@@ -10,7 +10,7 @@ export default function Footer() {
         <a className={styles.left}>The Ads Test</a>
       </Link>
 
-      <div className={styles.right}>About this Project</div>
+      {/* <div className={styles.right}>About this Project</div> */}
     </nav>
   );
 }

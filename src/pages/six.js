@@ -11,12 +11,14 @@ export default function Six() {
     <div className={styles.centerAlign}>
       <div className={styles.textInputContainer}>
         <h2 className={styles.title}>
-          If you didn’t already know, Google personalizes ads. Click the link to
-          view your Google Ad Settings, and take a few minutes to explore the
-          “How your ads are personalized” section.
+          If you didn’t already know, Google personalizes ads.
         </h2>
+        <p>
+          Click the link to view your Google Ad Settings, and take a few minutes
+          to explore the “How your ads are personalized” section.
+        </p>
         <a href="https://adssettings.google.com" target="_blank">
-          Click HERE for your Google Ad Settings
+          <img src="/ad-settings.png"></img>
         </a>
         <Link href="seven">
           <a>
