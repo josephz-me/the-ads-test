@@ -1,6 +1,9 @@
+@import "../../styles/vars_module.scss";
+
 .likertScale {
   margin-bottom: 1em;
   border: 0;
+  width: 60vw;
 }
 
 .likertBand {
@@ -12,14 +15,16 @@
   flex: 1 1 5em;
   text-align: center;
   position: relative;
+  cursor: pointer;
 }
 
 .likertLine {
   display: inline-block;
+
   width: 50%;
   vertical-align: top;
-  margin-top: 0.5em;
-  border-top: 3px solid dimgray;
+  margin-top: 1em;
+  border-top: 2px solid $primary-color;
 }
 
 .likertResponse:first-child .likertLine:first-child {
@@ -32,11 +37,11 @@
 
 .likertIndicator {
   display: inline-block;
-  width: 1em;
-  height: 1em;
-  border-radius: 0.5em;
-  border: thin solid #870230;
-  background-color: #ffed79;
+  width: 2em;
+  height: 2em;
+  border-radius: 5em;
+  border: 2px solid $primary-color;
+  background-color: #ffffff;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -45,13 +50,14 @@
 }
 
 .likertResponse:hover .likertIndicator {
-  background-color: white;
-  border-width: 3px;
+  background-color: $primary-color;
+  cursor: pointer;
+  // border-width: 3px;
 }
 
 .likertText {
   display: inline-block;
-  padding-top: 0.4em;
+  padding-top: 2em;
 }
 
 .likertScale.isKeyboardUser .likertResponse > input:focus ~ .likertText {
@@ -61,7 +67,7 @@
 }
 
 .likertResponse > input:checked + .likertIndicator {
-  background-color: #870230;
+  background-color: $primary-color;
 }
 
 .visuallyHidden {

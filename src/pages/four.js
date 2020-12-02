@@ -24,10 +24,10 @@ export default function Four() {
             { value: 2, text: "Disagree" },
             { value: 3, text: "Neutral" },
             { value: 4, text: "Agree" },
-            { value: 5, text: "Strongly Agree" }
+            { value: 5, text: "Strongly Agree" },
           ]}
           value={option}
-          onClick={response => setOption(response)}
+          onClick={(response) => setOption(response)}
         />
         <Link href="five" onClick={storeInputInContext(option)}>
           <a>
