@@ -5,16 +5,17 @@ import { Context } from "./store";
 import { useContext, useState } from "react";
 import RightArrow from "../components/RightArrow";
 import LeftArrow from "../components/LeftArrow";
+import Footer from "../components/Footer";
 
 function storeInputInContext(input) {
   const context = useContext(Context);
-  context.twelve = input;
+  context.eleven = input;
 }
 
 export default function Eleven() {
   const [input, setInput] = useState("");
   let arrows;
-  if (input == "") {
+  if (!input.match(/^[1-9]$|^[1-9][0-9]$|^(100)$/)) {
     arrows = (
       <Link href="ten" onClick={storeInputInContext(input)}>
         <a>
@@ -46,9 +47,11 @@ export default function Eleven() {
           question="What percentage of Google’s revenue comes from ads? Write a number between 0 and 100."
           value={input}
           onInput={e => setInput(e.target.value)}
+          type="number"
         />
         {arrows}
       </div>
+      <Footer level={11} />
     </div>
   );
 }

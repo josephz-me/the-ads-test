@@ -5,6 +5,7 @@ import { Context } from "./store";
 import { useContext, useState } from "react";
 import RightArrow from "../components/RightArrow";
 import LeftArrow from "../components/LeftArrow";
+import Footer from "../components/Footer";
 
 function storeInputInContext(input) {
   const context = useContext(Context);
@@ -43,7 +44,7 @@ export default function Nine() {
     <div className={styles.centerAlign}>
       <div>
         <LikertScale
-          question="When you viewed your Google Ad Settings, you felt surprised by the results."
+          question="When I viewed my Google Ad Settings, I was surprised by the results."
           responses={[
             { value: 1, text: "Strongly Disagree" },
             { value: 2, text: "Disagree" },
@@ -56,6 +57,7 @@ export default function Nine() {
         />
         {arrows}
       </div>
+      <Footer level={9} />
     </div>
   );
 }

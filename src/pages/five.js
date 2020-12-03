@@ -5,6 +5,7 @@ import { Context } from "./store";
 import { useContext, useState } from "react";
 import RightArrow from "../components/RightArrow";
 import LeftArrow from "../components/LeftArrow";
+import Footer from "../components/Footer";
 
 function storeInputInContext(input) {
   const context = useContext(Context);
@@ -49,6 +50,7 @@ export default function Five() {
         />
         {arrows}
       </div>
+      <Footer level={5} />
     </div>
   );
 }

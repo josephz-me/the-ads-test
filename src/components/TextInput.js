@@ -7,7 +7,7 @@ function TextInputPage(props) {
       <h2 className={styles.title}>{props.question}</h2>
       <input
         className={styles.textInput}
-        type="text"
+        type={props.type || "text"}
         value={props.input}
         onInput={props.onInput}
       />
