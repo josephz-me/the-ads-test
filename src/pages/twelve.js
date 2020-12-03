@@ -1,5 +1,5 @@
 import styles from "./index.module.scss";
-import TextInput from "../components/TextInput";
+import YesNo from "../components/YesNo";
 import Link from "next/link";
 import { Context } from "./store";
 import { useContext, useState } from "react";
@@ -8,29 +8,46 @@ import LeftArrow from "../components/LeftArrow";
 
 function storeInputInContext(input) {
   const context = useContext(Context);
-  context.twelve = input;
+  context.thirteen = input;
 }
 
 export default function Twelve() {
-  const [input, setInput] = useState("");
-  return (
-    <div className={styles.centerAlign}>
-      <div>
-        <TextInput
-          question="What percentage of Google’s revenue comes from ads? Write a number between 0 and 100."
-          value={input}
-          onInput={e => setInput(e.target.value)}
-        />
-        <Link href="thirteen" onClick={storeInputInContext(input)}>
+  const [yesno, setYesNo] = useState(0);
+  let arrows;
+  if (yesno == 0) {
+    arrows = (
+      <Link href="eleven" onClick={storeInputInContext(yesno)}>
+        <a>
+          <LeftArrow></LeftArrow>
+        </a>
+      </Link>
+    );
+  } else {
+    arrows = (
+      <>
+        <Link href="thanks" onClick={storeInputInContext(yesno)}>
           <a>
             <RightArrow></RightArrow>
           </a>
         </Link>
-        <Link href="eleven" onClick={storeInputInContext(input)}>
+        <Link href="eleven" onClick={storeInputInContext(yesno)}>
           <a>
             <LeftArrow></LeftArrow>
           </a>
         </Link>
+      </>
+    );
+  }
+
+  return (
+    <div className={styles.centerAlign}>
+      <div>
+        <YesNo
+          question="Do you think Google sells your data to other companies?"
+          value={yesno}
+          onClick={response => setYesNo(response)}
+        />
+        {arrows}
       </div>
     </div>
   );

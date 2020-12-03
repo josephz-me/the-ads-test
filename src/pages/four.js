@@ -14,6 +14,31 @@ function storeInputInContext(input) {
 
 export default function Four() {
   const [option, setOption] = useState(-1);
+  let arrows;
+  if (option == -1) {
+    arrows = (
+      <Link href="three" onClick={storeInputInContext(option)}>
+        <a>
+          <LeftArrow></LeftArrow>
+        </a>
+      </Link>
+    );
+  } else {
+    arrows = (
+      <>
+        <Link href="five" onClick={storeInputInContext(option)}>
+          <a>
+            <RightArrow></RightArrow>
+          </a>
+        </Link>
+        <Link href="three" onClick={storeInputInContext(option)}>
+          <a>
+            <LeftArrow></LeftArrow>
+          </a>
+        </Link>
+      </>
+    );
+  }
 
   return (
     <div className={styles.centerAlign}>
@@ -25,21 +50,12 @@ export default function Four() {
             { value: 2, text: "Disagree" },
             { value: 3, text: "Neutral" },
             { value: 4, text: "Agree" },
-            { value: 5, text: "Strongly Agree" },
+            { value: 5, text: "Strongly Agree" }
           ]}
           value={option}
-          onClick={(response) => setOption(response)}
+          onClick={response => setOption(response)}
         />
-        <Link href="five" onClick={storeInputInContext(option)}>
-          <a>
-            <RightArrow></RightArrow>
-          </a>
-        </Link>
-        <Link href="three" onClick={storeInputInContext(option)}>
-          <a>
-            <LeftArrow></LeftArrow>
-          </a>
-        </Link>
+        {arrows}
       </div>
       <Footer level={4} />
     </div>

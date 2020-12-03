@@ -1,5 +1,5 @@
 import styles from "./index.module.scss";
-import LikertScale from "../components/LikertScale";
+import YesNo from "../components/YesNo";
 import Link from "next/link";
 import { Context } from "./store";
 import { useContext, useState } from "react";
@@ -8,37 +8,46 @@ import LeftArrow from "../components/LeftArrow";
 
 function storeInputInContext(input) {
   const context = useContext(Context);
-  context.ten = input;
+  context.eleven = input;
 }
 
 export default function Ten() {
-  const [option, setOption] = useState(-1);
-
-  return (
-    <div className={styles.centerAlign}>
-      <div>
-        <LikertScale
-          question="TEMPORARY"
-          responses={[
-            { value: 1, text: "Strongly Disagree" },
-            { value: 2, text: "Disagree" },
-            { value: 3, text: "Neutral" },
-            { value: 4, text: "Agree" },
-            { value: 5, text: "Strongly Agree" }
-          ]}
-          value={option}
-          onClick={response => setOption(response)}
-        />
-        <Link href="eleven" onClick={storeInputInContext(option)}>
+  const [yesno, setYesNo] = useState(0);
+  let arrows;
+  if (yesno == 0) {
+    arrows = (
+      <Link href="nine" onClick={storeInputInContext(yesno)}>
+        <a>
+          <LeftArrow></LeftArrow>
+        </a>
+      </Link>
+    );
+  } else {
+    arrows = (
+      <>
+        <Link href="eleven" onClick={storeInputInContext(yesno)}>
           <a>
             <RightArrow></RightArrow>
           </a>
         </Link>
-        <Link href="nine" onClick={storeInputInContext(option)}>
+        <Link href="nine" onClick={storeInputInContext(yesno)}>
           <a>
             <LeftArrow></LeftArrow>
           </a>
         </Link>
+      </>
+    );
+  }
+
+  return (
+    <div className={styles.centerAlign}>
+      <div>
+        <YesNo
+          question="Do you think Google collects data about you from non-Google websites?"
+          value={yesno}
+          onClick={response => setYesNo(response)}
+        />
+        {arrows}
       </div>
     </div>
   );

@@ -14,6 +14,31 @@ function storeInputInContext(input) {
 
 export default function One() {
   const [option, setOption] = useState(-1);
+  let arrows;
+  if (option == -1) {
+    arrows = (
+      <Link href="/" onClick={storeInputInContext(option)}>
+        <a>
+          <LeftArrow></LeftArrow>
+        </a>
+      </Link>
+    );
+  } else {
+    arrows = (
+      <>
+        <Link href="two" onClick={storeInputInContext(option)}>
+          <a>
+            <RightArrow></RightArrow>
+          </a>
+        </Link>
+        <Link href="/" onClick={storeInputInContext(option)}>
+          <a>
+            <LeftArrow></LeftArrow>
+          </a>
+        </Link>
+      </>
+    );
+  }
 
   return (
     <div className={styles.centerAlign}>
@@ -30,16 +55,7 @@ export default function One() {
           value={option}
           onClick={response => setOption(response)}
         />
-        <Link href="two" onClick={storeInputInContext(option)}>
-          <a>
-            <RightArrow></RightArrow>
-          </a>
-        </Link>
-        <Link href="/" onClick={storeInputInContext(option)}>
-          <a>
-            <LeftArrow></LeftArrow>
-          </a>
-        </Link>
+        {arrows}
       </div>
       <Footer level={1} />
     </div>

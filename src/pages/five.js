@@ -13,14 +13,18 @@ function storeInputInContext(input) {
 
 export default function Five() {
   const [yesno, setYesNo] = useState(0);
-  return (
-    <div className={styles.centerAlign}>
-      <div>
-        <YesNo
-          question="I am aware that Google personalizes ads based on data collected about my Google account."
-          value={yesno}
-          onClick={response => setYesNo(response)}
-        />
+  let arrows;
+  if (yesno == 0) {
+    arrows = (
+      <Link href="four" onClick={storeInputInContext(yesno)}>
+        <a>
+          <LeftArrow></LeftArrow>
+        </a>
+      </Link>
+    );
+  } else {
+    arrows = (
+      <>
         <Link href="six" onClick={storeInputInContext(yesno)}>
           <a>
             <RightArrow></RightArrow>
@@ -31,6 +35,19 @@ export default function Five() {
             <LeftArrow></LeftArrow>
           </a>
         </Link>
+      </>
+    );
+  }
+
+  return (
+    <div className={styles.centerAlign}>
+      <div>
+        <YesNo
+          question="I am aware that Google personalizes ads based on data collected about my Google account."
+          value={yesno}
+          onClick={response => setYesNo(response)}
+        />
+        {arrows}
       </div>
     </div>
   );

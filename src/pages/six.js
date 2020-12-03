@@ -1,8 +1,5 @@
 import styles from "./index.module.scss";
-import LikertScale from "../components/LikertScale";
 import Link from "next/link";
-import { Context } from "./store";
-import { useContext, useState } from "react";
 import RightArrow from "../components/RightArrow";
 import LeftArrow from "../components/LeftArrow";
 
@@ -14,8 +11,8 @@ export default function Six() {
           If you didn’t already know, Google personalizes ads.
         </h2>
         <p>
-          Click the link to view your Google Ad Settings, and take a few minutes
-          to explore the “How your ads are personalized” section.
+          Click the image to view your Google Ad Settings, and take a few
+          minutes to explore the “How your ads are personalized” section.
         </p>
         <a href="https://adssettings.google.com" target="_blank">
           <img src="/ad-settings.png"></img>

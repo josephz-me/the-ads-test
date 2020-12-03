@@ -13,6 +13,31 @@ function storeInputInContext(input) {
 
 export default function Nine() {
   const [option, setOption] = useState(-1);
+  let arrows;
+  if (option == -1) {
+    arrows = (
+      <Link href="eight" onClick={storeInputInContext(option)}>
+        <a>
+          <LeftArrow></LeftArrow>
+        </a>
+      </Link>
+    );
+  } else {
+    arrows = (
+      <>
+        <Link href="ten" onClick={storeInputInContext(option)}>
+          <a>
+            <RightArrow></RightArrow>
+          </a>
+        </Link>
+        <Link href="eight" onClick={storeInputInContext(option)}>
+          <a>
+            <LeftArrow></LeftArrow>
+          </a>
+        </Link>
+      </>
+    );
+  }
 
   return (
     <div className={styles.centerAlign}>
@@ -29,16 +54,7 @@ export default function Nine() {
           value={option}
           onClick={response => setOption(response)}
         />
-        <Link href="ten" onClick={storeInputInContext(option)}>
-          <a>
-            <RightArrow></RightArrow>
-          </a>
-        </Link>
-        <Link href="eight" onClick={storeInputInContext(option)}>
-          <a>
-            <LeftArrow></LeftArrow>
-          </a>
-        </Link>
+        {arrows}
       </div>
     </div>
   );
