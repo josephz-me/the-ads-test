@@ -1,6 +1,6 @@
 import styles from "./index.module.scss";
 import Link from "next/link";
-import ProgressBar from "react-bootstrap/ProgressBar";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Home() {
   return (

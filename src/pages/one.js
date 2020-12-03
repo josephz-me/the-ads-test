@@ -5,6 +5,7 @@ import { Context } from "./store";
 import { useContext, useState } from "react";
 import RightArrow from "../components/RightArrow";
 import LeftArrow from "../components/LeftArrow";
+import Footer from "../components/Footer";
 
 function storeInputInContext(input) {
   const context = useContext(Context);
@@ -40,6 +41,7 @@ export default function One() {
           </a>
         </Link>
       </div>
+      <Footer level={1} />
     </div>
   );
 }

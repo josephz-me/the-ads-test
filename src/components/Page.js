@@ -12,7 +12,6 @@ export default function Page(props) {
       <Meta />
       <Navbar />
       {props.children}
-      <Footer />
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "../../styles/globals.scss";
 import Page from "../components/Page";
 import React from "react";

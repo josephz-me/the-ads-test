@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import styles from "./Navbar.module.scss";
 
-export default function Footer() {
+export default function Header() {
   return (
     <nav className={styles.navContainer}>
       <Link href="/">
