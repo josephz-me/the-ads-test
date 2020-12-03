@@ -1,7 +1,7 @@
 import styles from "./index.module.scss";
 import LikertScale from "../components/LikertScale";
 import Link from "next/link";
-import { Context } from "./store";
+import { Context } from "../components/store";
 import { useContext, useState } from "react";
 import RightArrow from "../components/RightArrow";
 import LeftArrow from "../components/LeftArrow";

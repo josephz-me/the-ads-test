@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "../../styles/globals.scss";
 import Page from "../components/Page";
 import React from "react";
-import { Provider, Context } from "./store";
+import { Provider, Context } from "../components/store";
 import { PageTransition } from "next-page-transitions";
 
 export default function App({ Component, pageProps, router }) {

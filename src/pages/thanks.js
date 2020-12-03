@@ -1,5 +1,5 @@
 import styles from "./index.module.scss";
-import { Context } from "./store";
+import { Context } from "../components/store";
 import { useContext } from "react";
 import Footer from "../components/Footer";
 
